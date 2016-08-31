@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, Image, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, Image, View } from 'react-native';
 
 class Greeting extends Component {
   render() {
     return (
-      <Text>Hello {this.props.name}!</Text>
+      <Text style={styles.coolstyle}>Hello {this.props.name}!</Text>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  coolstyle: {
+    color: '#006400',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+});
 
 class MyComponent extends Component {
   render() {
