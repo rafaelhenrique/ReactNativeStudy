@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text } from 'react-native';
+import { AppRegistry, Text, Image, View } from 'react-native';
 
-class HelloWorldApp extends Component {
+class Greeting extends Component {
   render() {
     return (
-      <Text>Hello world!</Text>
+      <Text>Hello {this.props.name}!</Text>
     );
   }
 }
 
-AppRegistry.registerComponent('ReactNativeStudy', () => HelloWorldApp);
+class MyComponent extends Component {
+  render() {
+    let pic = {
+      uri: 'https://bnetproduct-a.akamaihd.net//dg/7364/334651FFB5510B42E53C9C61CFC413378201C32D.png'
+    };
+    return (
+      <View style={{alignItems: 'center'}}>
+        <Greeting name="Rafael" />
+        <Image source={pic} style={{width: 193, height: 110}}/>
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('ReactNativeStudy', () => MyComponent);
