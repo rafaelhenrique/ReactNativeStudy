@@ -50,10 +50,17 @@ class MyComponent extends Component {
     };
     // prop can be whatever name, dog for example
     return (
-      <View style={{alignItems: 'center'}}>
-        <Greeting name="Rafael" />
-        <Image source={pic} style={{width: 193, height: 110}}/>
-        <Blink dog='BLINKING! :P' />
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, alignItems: 'center', backgroundColor: 'powderblue'}}>
+          <Greeting name="Rafael" />
+        </View>
+        <View style={{flex: 2, alignItems: 'center', backgroundColor: 'skyblue'}}>
+          <Image source={pic} style={{width: 193, height: 110}}/>
+        </View>
+        <View style={{flex: 3, alignItems: 'center', backgroundColor: 'steelblue'}}>
+          <Blink dog='BLINKING! :P' />
+        </View>
+        <View style={{width: 80, height: 80, alignItems: 'center', backgroundColor: 'powderblue'}} />
       </View>
     );
   }
