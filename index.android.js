@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, Image, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, Image, View, TextInput } from 'react-native';
 
 class Greeting extends Component {
   render() {
@@ -44,13 +44,27 @@ const styles = StyleSheet.create({
 });
 
 class MyComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
+
   render() {
     let pic = {
       uri: 'https://bnetproduct-a.akamaihd.net//dg/7364/334651FFB5510B42E53C9C61CFC413378201C32D.png'
     };
     // prop can be whatever name, dog for example
+    // first view is a pizza translator
     return (
       <View style={{flex: 1}}>
+        <TextInput
+          style={{height: 40}}
+          placeholder="Type here to translate!"
+          onChangeText={(text) => this.setState({text})}
+        />
+        <Text style={{padding: 10, fontSize: 42}}>
+          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
+        </Text>
         <View style={{flex: 1, alignItems: 'center', backgroundColor: 'powderblue'}}>
           <Greeting name="Rafael" />
         </View>
